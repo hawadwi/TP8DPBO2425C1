@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ubah</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="departments.php">Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="positions.php">Position</a>
+          </li>
+        </ul>
+        <span class="navbar-brand text-white" href="#"><strong>Lecturer</strong></span>
+      </div>
+    </div>
+  </nav>
+  <div class="col-lg-6 m-auto">
+    <form method="post" action="index.php?id_edit={{id}}">
+      <br><br>
+    <div class="card">
+      <div class="card-header bg-warning">
+        <h1 class="text-white text-center"> Update Lecturer </h1>
+      </div>
+
+      <input type="hidden" name="id" value="{{id}}">
+
+      <label> NAME: </label>
+      <input type="text" name="name" value="{{name}}" class="form-control"> <br>
+
+      <label> NIDN: </label>
+      <input type="text" name="nidn" value="{{nidn}}" class="form-control"> <br>
+
+      <label> PHONE: </label>
+      <input type="text" name="phone" value="{{phone}}" class="form-control"> <br>
+
+      <label> JOIN DATE: </label>
+      <input type="date" name="join_date" value="{{join_date}}" class="form-control"> <br>
+
+      <label> DEPARTMENT: </label>
+      <select name="dept_id" class="form-control">
+        {{department_options}}
+      </select> <br>
+
+      <label> POSITION: </label>
+      <select name="position_id" class="form-control">
+        {{position_options}}
+      </select> <br>
+      <button class="btn btn-success" type="submit" name="update"> Update </button>
+      <a class="btn btn-info" href="index.php"> Cancel </a><br>
+    </div>
+  </form>
+</body>
+
+</html>

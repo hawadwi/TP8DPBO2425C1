@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ubah</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="jquery.min.js"></script>
+  <script src="popper.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="departments.php">Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="positions.php">Position</a>
+          </li>
+        </ul>
+        <span class="navbar-brand text-white" href="#"><strong>Lecturer</strong></span>
+      </div>
+    </div>
+  </nav>
+  <div class="col-lg-6 m-auto">
+    <form method="post" action="departments.php?id_edit={{id}}">
+        <br><br>
+      <div class="card">
+        <div class="card-header bg-warning">
+          <h1 class="text-white text-center"> Update Department </h1>
+        </div>
+        <input type="hidden" name="id" value="{{id}}" class="form-control"> <br>
+
+        <label> NAME: </label>
+        <input type="text" name="dept_name" value="{{dept_name}}" class="form-control"> <br>
+
+        <label> ROOM CODE: </label>
+        <input type="text" name="room_code" value="{{room_code}}" class="form-control"> <br>
+
+        <button class="btn btn-success" type="submit" name="submit"> Submit </button><br>
+        <a class="btn btn-info" href="departments.php"> Cancel </a><br>     
+    </form>
+  </div>
+</body>
+
+</html>
+
+
